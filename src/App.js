@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import MovieList from "./components/MovieList";
+import SearchAppBar from "./components/SearchAppBar";
 
 const App = () => {
   const [movies, setMovies] = useState([
@@ -83,7 +85,12 @@ const App = () => {
         "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg",
     },
   ]);
-  return <div className="code"></div>;
+  return (
+    <div className="code">
+      <SearchAppBar />
+      <MovieList movies={movies} />
+    </div>
+  );
 };
 
 export default App;
