@@ -88,7 +88,9 @@ const App = () => {
   return (
     <div className="code">
       <SearchAppBar />
-      <MovieList movies={movies} />
+      <div className="movie">
+        <MovieList movies={movies} />
+      </div>
     </div>
   );
 };
