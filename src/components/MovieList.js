@@ -12,10 +12,21 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 345,
     width: 300,
-    margin: 20,
+    margin: 15,
+    // "&:hover": { transform: "scale(0.9)" },
   },
   media: {
     height: 300,
+  },
+
+  btn: {
+    backgroundColor: "#008060",
+    color: "#fff",
+    padding: 10,
+    "&:hover": {
+      backgroundColor: "#0f6060",
+      transform: "scale(1.1)",
+    },
   },
 });
 
@@ -33,8 +44,13 @@ export default function MovieList({ movies }) {
               title="Image Poster"
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                {movie.Title}
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="h2"
+                style={{ height: 40 }}
+              >
+                {movie.Title} ({movie.Year})
               </Typography>
               {/* <Typography variant="body2" color="textSecondary" component="p">
                 Lizards are a widespread group of squamate reptiles, with over
@@ -43,7 +59,7 @@ export default function MovieList({ movies }) {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button size="small" className={classes.btn}>
               Nominate
             </Button>
           </CardActions>
@@ -52,17 +68,3 @@ export default function MovieList({ movies }) {
     </>
   );
 }
-
-// const MovieList = ({ movies }) => {
-//   return (
-//     <>
-//       {movies.map((movie, index) => (
-//         <div key={index}>
-//           <img src={movie.Poster} alt="movie poster" />
-//         </div>
-//       ))}
-//     </>
-//   );
-// };
-
-// export default MovieList;

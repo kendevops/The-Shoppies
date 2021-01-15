@@ -13,14 +13,8 @@ body {
     monospace;
 }
 
-.movie-container {
+.movie {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
-  overflow-x: auto;
-}
-
-.movie {
-  margin: "2rem";
-  width: "4rem";
+  justify-content: center;
 }

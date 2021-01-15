@@ -22,8 +22,8 @@ const App = () => {
   return (
     <div className="code">
       <SearchAppBar searchValue={searchValue} setSearchValue={setSearchValue} />
-      <div className="movie-container">
-        <MovieList movies={movies} className="movie"/>
+      <div className="movie">
+        <MovieList movies={movies} />
       </div>
     </div>
   );
