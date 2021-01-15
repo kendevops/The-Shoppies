@@ -5,12 +5,14 @@ import SearchAppBar from "./components/SearchAppBar";
 const App = () => {
   const [movies, setMovies] = useState([]);
 
+  const [searchValue, setSearchValue] = useState("");
+
   const getMovies = async () => {
-    const url = "http://www.omdbapi.com/?s=star wars&apikey=14454eea";
+    const url = "http://www.omdbapi.com/?s=avengers&apikey=14454eea";
     const response = await fetch(url);
     const json = await response.json();
 
-    setMovies(json.search);
+    setMovies(json.Search);
     console.log(json);
   };
 
@@ -19,7 +21,7 @@ const App = () => {
   }, []);
   return (
     <div className="code">
-      <SearchAppBar />
+      <SearchAppBar searchValue={searchValue} setSearchValue={setSearchValue} />
       <div className="movie">
         <MovieList movies={movies} />
       </div>

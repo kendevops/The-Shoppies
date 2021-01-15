@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -59,29 +59,28 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      width: "12ch",
+      width: "20ch",
       "&:focus": {
-        width: "20ch",
+        width: "30ch",
       },
     },
   },
 }));
 
-export default function SearchAppBar() {
+export default function SearchAppBar(props) {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.bar}>
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="open drawer"
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
           <Typography className={classes.title} variant="h6" noWrap>
             The Shoppies
           </Typography>
@@ -96,6 +95,8 @@ export default function SearchAppBar() {
                 input: classes.inputInput,
               }}
               inputProps={{ "aria-label": "search" }}
+              value={props.value}
+              onChange={(event) => props.setSearchValue(event.target.value)}
             />
           </div>
         </Toolbar>
