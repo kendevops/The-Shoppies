@@ -19,7 +19,8 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    display: "none",
+    display: "block",
+    padding: 20,
     [theme.breakpoints.up("sm")]: {
       display: "block",
     },
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginLeft: 0,
-    width: "100%",
+    width: "50%",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(1),
       width: "auto",

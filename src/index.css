@@ -13,9 +13,14 @@ body {
     monospace;
 }
 
-.movie {
+.movie-container {
   display: flex;
   flex-wrap: wrap;
   /* justify-content: space-around; */
   overflow-x: auto;
+}
+
+.movie {
+  margin: "2rem";
+  width: "4rem";
 }

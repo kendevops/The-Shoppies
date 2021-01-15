@@ -7,23 +7,23 @@ const App = () => {
 
   const [searchValue, setSearchValue] = useState("");
 
-  const getMovies = async () => {
-    const url = "http://www.omdbapi.com/?s=avengers&apikey=14454eea";
+  const getMovies = async (searchValue) => {
+    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=14454eea`;
     const response = await fetch(url);
     const json = await response.json();
-
-    setMovies(json.Search);
-    console.log(json);
+    if (json.Search) {
+      setMovies(json.Search);
+    }
   };
 
   useEffect(() => {
-    getMovies();
-  }, []);
+    getMovies(searchValue);
+  }, [searchValue]);
   return (
     <div className="code">
       <SearchAppBar searchValue={searchValue} setSearchValue={setSearchValue} />
-      <div className="movie">
-        <MovieList movies={movies} />
+      <div className="movie-container">
+        <MovieList movies={movies} className="movie"/>
       </div>
     </div>
   );
