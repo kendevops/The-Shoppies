@@ -4,8 +4,8 @@ import SearchAppBar from "./components/SearchAppBar";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
-
   const [searchValue, setSearchValue] = useState("");
+  // const [nominate, setNominate] = useState();
 
   const getMovies = async (searchValue) => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=14454eea`;
