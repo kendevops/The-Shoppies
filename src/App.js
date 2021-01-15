@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MovieList from "./components/MovieList";
 import SearchAppBar from "./components/SearchAppBar";
 
@@ -85,6 +85,18 @@ const App = () => {
         "https://m.media-amazon.com/images/M/MV5BMDljNTQ5ODItZmQwMy00M2ExLTljOTQtZTVjNGE2NTg0NGIxXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_SX300.jpg",
     },
   ]);
+
+  const getMovies = async () => {
+    const url = "http://www.omdbapi.com/?s=star wars&apikey=14454eea";
+    const response = await fetch(url);
+    const json = await response.json();
+
+    console.log(json);
+  };
+
+  useEffect(() => {
+    getMovies();
+  }, []);
   return (
     <div className="code">
       <SearchAppBar />
