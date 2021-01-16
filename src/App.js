@@ -31,7 +31,7 @@ const App = () => {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Maximum Nomination Done!!!",
+        text: "You have Reached Your Maximum Nominations!!!",
       });
     }
   };
