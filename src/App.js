@@ -27,7 +27,6 @@ const App = () => {
     if (nominated.length < 5) {
       setNominated(newNominatedList);
       Swal.fire("Nice!", "Movie Nominated!", "success");
-      // alert("Movie Nominated!");
     } else {
       Swal.fire({
         icon: "error",
@@ -54,7 +53,6 @@ const App = () => {
         setNominated(newNominatedList);
       }
     });
-    // alert("Movie Removed from Nomination!");
   };
   return (
     <div className="code">
