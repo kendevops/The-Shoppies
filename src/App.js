@@ -41,8 +41,20 @@ const App = () => {
     const newNominatedList = nominated.filter(
       (nominate) => nominate.imdbID !== movie.imdbID
     );
-    setNominated(newNominatedList);
-    alert("Movie Removed from Nomination!");
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to remove this movie from Nomination",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes!",
+    }).then((result) => {
+      if (result.value) {
+        setNominated(newNominatedList);
+      }
+    });
+    // alert("Movie Removed from Nomination!");
   };
   return (
     <div className="code">
