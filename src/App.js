@@ -5,7 +5,7 @@ import SearchAppBar from "./components/SearchAppBar";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
-  const [nominate, setNominate] = useState([]);
+  const [nominated, setNominated] = useState([]);
   const [searchValue, setSearchValue] = useState("");
 
   const getMovies = async (searchValue) => {
@@ -22,16 +22,27 @@ const App = () => {
   }, [searchValue]);
 
   const addNominated = (movie) => {
-    const newNominatedList = [...nominate, movie];
-    if (nominate.length < 5) {
-      setNominate(newNominatedList);
+    const newNominatedList = [...nominated, movie];
+    if (nominated.length < 5) {
+      setNominated(newNominatedList);
     } else {
       alert("Maximum Nomination Done!!!");
     }
   };
+
+  const removeNomination = (movie) => {
+    const newNominatedList = nominated.filter(
+      (nominate) => nominate.imdbID !== movie.imdbID
+    );
+
+    setNominated(newNominatedList);
+  };
   return (
     <div className="code">
       <SearchAppBar searchValue={searchValue} setSearchValue={setSearchValue} />
+      <div>
+        <h1>Search Results</h1>
+      </div>
       <div className="movie">
         <MovieList movies={movies} handleNominateClick={addNominated} />
       </div>
@@ -39,7 +50,7 @@ const App = () => {
         <h1>Nominated Movies</h1>
       </div>
       <div className="movie">
-        <Nominated movies={nominate} handleNominateClick={addNominated} />
+        <Nominated movies={nominated} handleNominateClick={removeNomination} />
       </div>
     </div>
   );

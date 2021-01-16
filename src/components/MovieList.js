@@ -52,7 +52,7 @@ export default function MovieList({ movies, handleNominateClick }) {
                 gutterBottom
                 variant="h5"
                 component="h2"
-                // style={{ height: 40 }}
+                style={{ height: 50 }}
               >
                 {movie.Title} ({movie.Year})
               </Typography>
