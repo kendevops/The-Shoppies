@@ -10,7 +10,7 @@ const App = () => {
   const [searchValue, setSearchValue] = useState("");
 
   const getMovies = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=14454eea`;
+    const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=14454eea`;
     const response = await fetch(url);
     const json = await response.json();
     if (json.Search) {
