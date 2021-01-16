@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MovieList from "./components/MovieList";
 import Nominated from "./components/Nominated";
 import SearchAppBar from "./components/SearchAppBar";
+import Swal from "sweetalert2";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -25,9 +26,14 @@ const App = () => {
     const newNominatedList = [...nominated, movie];
     if (nominated.length < 5) {
       setNominated(newNominatedList);
-      alert("Movie Nominated!");
+      Swal.fire("Nice!", "Movie Nominated!", "success");
+      // alert("Movie Nominated!");
     } else {
-      alert("Maximum Nomination Done!!!");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Maximum Nomination Done!!!",
+      });
     }
   };
 
