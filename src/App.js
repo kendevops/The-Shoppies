@@ -22,10 +22,19 @@ const App = () => {
     getMovies(searchValue);
   }, [searchValue]);
 
+  useEffect(() => {
+    const nominatedMovie = JSON.parse(localStorage.getItem("nominated-movies"));
+    setNominated(nominatedMovie);
+  }, []);
+
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem("nominated-movies", JSON.stringify(items));
+  };
   const addNominated = (movie) => {
     const newNominatedList = [...nominated, movie];
     if (nominated.length < 5) {
       setNominated(newNominatedList);
+      saveToLocalStorage(newNominatedList);
       Swal.fire("Nice!", "Movie Nominated!", "success");
     } else {
       Swal.fire({
