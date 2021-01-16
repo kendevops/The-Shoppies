@@ -57,13 +57,13 @@ const App = () => {
   return (
     <div className="code">
       <SearchAppBar searchValue={searchValue} setSearchValue={setSearchValue} />
-      <div>
+      <div className="heading">
         <h1>Search Results</h1>
       </div>
       <div className="movie">
         <MovieList movies={movies} handleNominateClick={addNominated} />
       </div>
-      <div>
+      <div className="heading">
         <h1>Nominated Movies</h1>
       </div>
       <div className="movie">
