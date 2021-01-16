@@ -25,6 +25,7 @@ const App = () => {
     const newNominatedList = [...nominated, movie];
     if (nominated.length < 5) {
       setNominated(newNominatedList);
+      alert("Movie Nominated!");
     } else {
       alert("Maximum Nomination Done!!!");
     }
@@ -34,8 +35,8 @@ const App = () => {
     const newNominatedList = nominated.filter(
       (nominate) => nominate.imdbID !== movie.imdbID
     );
-
     setNominated(newNominatedList);
+    alert("Movie Removed from Nomination!");
   };
   return (
     <div className="code">

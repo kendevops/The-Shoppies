@@ -21,11 +21,11 @@ const useStyles = makeStyles({
   },
 
   btn: {
-    backgroundColor: "grey",
+    backgroundColor: "#ff2000",
     color: "#fff",
     padding: 10,
     "&:hover": {
-      backgroundColor: "#0f6060",
+      backgroundColor: "#ff4000",
       transform: "scale(1.1)",
     },
   },
