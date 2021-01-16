@@ -35,10 +35,7 @@ export default function Nominated({ movies, handleNominateClick }) {
   const classes = useStyles();
 
   return (
-    <div style={{display: "flex"}}>
-      <div>
-        <Typography variant="h1">Nominated Movies</Typography>
-      </div>
+    <>
       {movies.map((movie, index) => (
         <Card key={index} className={classes.root}>
           <CardActionArea>
@@ -74,6 +71,6 @@ export default function Nominated({ movies, handleNominateClick }) {
           </CardActions>
         </Card>
       ))}
-    </div>
+    </>
   );
 }

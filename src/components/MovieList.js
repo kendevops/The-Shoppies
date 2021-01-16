@@ -68,9 +68,6 @@ export default function MovieList({ movies, handleNominateClick }) {
               size="small"
               className={classes.btn}
               onClick={() => handleNominateClick(movie)}
-              ref={(btn) => {
-                this.btn = btn;
-              }}
             >
               Nominate
             </Button>

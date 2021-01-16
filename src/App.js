@@ -39,11 +39,8 @@ const App = () => {
         <h1>Nominated Movies</h1>
       </div>
       <div className="movie">
-        <MovieList movies={nominate} handleNominateClick={addNominated} />
-      </div>
-      {/* <div className="movie">
         <Nominated movies={nominate} handleNominateClick={addNominated} />
-      </div> */}
+      </div>
     </div>
   );
 };
