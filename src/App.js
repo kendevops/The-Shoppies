@@ -77,7 +77,7 @@ const App = () => {
         <h1>Nominated Movies</h1>
       </div>
       <div className="movie">
-        <Nominated movies={movies} handleNominateClick={removeNomination} />
+        <Nominated movies={nominated} handleNominateClick={removeNomination} />
       </div>
     </div>
   );

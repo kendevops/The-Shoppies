@@ -37,7 +37,6 @@ const useStyles = makeStyles({
 
 export default function MovieList({ movies, handleNominateClick }) {
   const classes = useStyles();
-  // const [disabled, setDisabled] = useState(false);
   return (
     <>
       {movies.map((movie, index) => (
@@ -57,10 +56,6 @@ export default function MovieList({ movies, handleNominateClick }) {
               >
                 {movie.Title} ({movie.Year})
               </Typography>
-              {/* <Typography variant="body2" color="textSecondary" component="p">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography> */}
             </CardContent>
           </CardActionArea>
           <CardActions>
