@@ -60,6 +60,7 @@ const App = () => {
     }).then((result) => {
       if (result.value) {
         setNominated(newNominatedList);
+        saveToLocalStorage(newNominatedList);
       }
     });
   };
