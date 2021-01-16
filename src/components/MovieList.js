@@ -31,7 +31,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MovieList({ movies }) {
+export default function MovieList({ movies, handleNominateClick }) {
   const classes = useStyles();
 
   return (
@@ -49,7 +49,7 @@ export default function MovieList({ movies }) {
                 gutterBottom
                 variant="h5"
                 component="h2"
-                style={{ height: 40 }}
+                // style={{ height: 40 }}
               >
                 {movie.Title} ({movie.Year})
               </Typography>
@@ -64,6 +64,7 @@ export default function MovieList({ movies }) {
               startIcon={<StarsIcon />}
               size="small"
               className={classes.btn}
+              onClick={() => handleNominateClick(movie)}
             >
               Nominate
             </Button>
