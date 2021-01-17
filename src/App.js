@@ -22,19 +22,23 @@ const App = () => {
     getMovies(searchValue);
   }, [searchValue]);
 
-  // useEffect(() => {
-  //   const nominatedMovie = JSON.parse(localStorage.getItem("nominated-movies"));
-  //   setNominated(nominatedMovie);
-  // }, []);
+  useEffect(() => {
+    const nominatedMovie = JSON.parse(localStorage.getItem("nominated-movies"));
+    if (!nominatedMovie) {
+      return [];
+    } else {
+      setNominated(nominatedMovie);
+    }
+  }, []);
 
-  // const saveToLocalStorage = (items) => {
-  //   localStorage.setItem("nominated-movies", JSON.stringify(items));
-  // };
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem("nominated-movies", JSON.stringify(items));
+  };
   const addNominated = (movie) => {
     const newNominatedList = [...nominated, movie];
     if (nominated.length < 5) {
       setNominated(newNominatedList);
-      // saveToLocalStorage(newNominatedList);
+      saveToLocalStorage(newNominatedList);
       Swal.fire("Nice!", "Movie Nominated!", "success");
     } else {
       Swal.fire({
@@ -60,7 +64,7 @@ const App = () => {
     }).then((result) => {
       if (result.value) {
         setNominated(newNominatedList);
-        // saveToLocalStorage(newNominatedList);
+        saveToLocalStorage(newNominatedList);
       }
     });
   };
