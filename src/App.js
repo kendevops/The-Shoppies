@@ -31,7 +31,7 @@ const App = () => {
     localStorage.setItem("nominated-movies", JSON.stringify(items));
   };
   const addNominated = (movie) => {
-    const newNominatedList = [...nominated, movie];
+    const newNominatedList = [Symbol.iterator]([...nominated, movie]);
     if (nominated.length < 5) {
       setNominated(newNominatedList);
       saveToLocalStorage(newNominatedList);
