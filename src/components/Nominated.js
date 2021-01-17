@@ -34,7 +34,7 @@ const useStyles = makeStyles({
 export default function Nominated({ movies, handleNominateClick }) {
   const classes = useStyles();
   if (!movies) {
-    return "Loading ...";
+    return "";
   }
   return (
     <>
